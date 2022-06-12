@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "bacotan",
+    "name": "Bacotan App",
     "slug": "bacotan",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/bacotan-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/bacotan-splash.png",
+      "image": "./assets/splash-screen.png",
       "resizeMode": "contain",
       "backgroundColor": "#1A1A2E"
     },
@@ -20,12 +20,12 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/bacotan-icon.png",
+        "backgroundColor": "#1A1A2E"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/bacotan-icon.png"
     }
   }
 }

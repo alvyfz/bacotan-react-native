@@ -7,6 +7,8 @@ import client from "./src/Apps/ApolloClient";
 import AuthScreen from "./src/Screens/AuthScreen";
 import IntroScreen from "./src/Screens/IntroScreen";
 import ChatRoomScreen from "./src/Screens/ChatRoomScreen";
+import { StatusBar } from "react-native";
+import { colors } from "./src/Utils/Colors";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +16,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <NavigationContainer>
+        <StatusBar backgroundColor={colors.bg} barStyle="light-content" />
         <Stack.Navigator
           initialRouteName="IntroScreen"
           screenOptions={{
