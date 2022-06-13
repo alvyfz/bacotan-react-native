@@ -57,7 +57,6 @@ const ChatRoomScreen = ({ route }) => {
   useEffect(() => {
     retrieveData();
   }, []);
-  // console.log(messagesEndRef.current);
 
   const { data, error } = useQuery(QUERY_ROOM_BY_ID, {
     variables: { id: roomId },
@@ -205,17 +204,32 @@ const ChatRoomScreen = ({ route }) => {
             </>
           ) : (
             <>
-              <View>
-                <FlatList
-                  onContentSizeChange={() => {
-                    messagesEndRef.current.scrollToEnd();
-                  }}
-                  ref={messagesEndRef}
-                  data={dataMessages}
-                  renderItem={renderItem}
-                  keyExtractor={(item) => item.id}
-                />
-              </View>
+              <>
+                {dataMessages?.length > 0 ? (
+                  <>
+                    <View>
+                      <FlatList
+                        ref={messagesEndRef}
+                        data={dataMessages}
+                        renderItem={renderItem}
+                        keyExtractor={(item) => item.id}
+                        onContentSizeChange={() => {
+                          messagesEndRef.current.scrollToEnd();
+                        }}
+                      />
+                    </View>
+                  </>
+                ) : (
+                  <View
+                    style={{
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }}
+                  >
+                    <Text style={{ color: colors.text }}>No messages yet</Text>
+                  </View>
+                )}
+              </>
             </>
           )}
         </View>

@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "Bacotan App",
+    "description": "Bacotan App versi mobile untuk mengikuti perkembangan terbaru di Indonesia",
     "slug": "bacotan",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -22,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/bacotan-icon.png",
         "backgroundColor": "#1A1A2E"
-      }
+      },
+      "package": "com.bacotan.app"
     },
     "web": {
       "favicon": "./assets/bacotan-icon.png"
