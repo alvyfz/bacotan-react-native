@@ -56,14 +56,14 @@ function RegisterForm() {
   }, [data]);
 
   const validation = username.isValid && password.isValid;
-  const RegexUsername = /^[a-z0-9_.]{5,15}$/;
+  const RegexUsername = /^(?=[a-zA-Z0-9._]{6,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
   const RegexPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,15}$/;
 
   const handleRegister = () => {
     SignupInsert({
       variables: {
         object: {
-          username: username.value,
+          username: username.value.toLowerCase(),
           password: password.value,
         },
       },
